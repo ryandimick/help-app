@@ -42,6 +42,18 @@ module.exports = {
   ],
   plugins: [
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'opcon-basic-training',
+        path: './content/opcon-basic-training/docs',
+        routeBasePath: 'training/opcon-basic',
+        sidebarPath: require.resolve('./content/opcon-basic-training/sidebars.js'),
+        editUrl:
+            'https://github.com/smatechnologies/opcon-basic-training/blob/main',
+
+      },
+    ],
+    [
       require.resolve('@cmfcmf/docusaurus-search-local'), 
       {
       }
