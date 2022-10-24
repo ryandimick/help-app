@@ -12,10 +12,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+      - uses: kheiakiyama/install-azcopy-action@v1
+        with:
+          version: 'v10'          
       - run: azcopy_v10 copy 'https://smahelpcontent.file.core.windows.net/content?sv=2021-06-08&ss=bfqt&srt=s&sp=rwdlacupiytfx&se=2022-10-28T22:21:41Z&st=2022-10-24T14:21:41Z&spr=https&sig=h6ukZIJe%2Fgtjq1oFElYs2Ym4HXTlQcbXHhSvgECKZQI%3D' 'content/' --recursive
       - run: yarn install
       - run: yarn build
-      - uses: kheiakiyama/install-azcopy-action@v1
-        with:
-          version: 'v10'
       - run: azcopy_v10 copy 'build/*' 'https://smahelpcontent.file.core.windows.net/app?sv=2021-06-08&ss=bfqt&srt=s&sp=rwdlacupiytfx&se=2022-10-28T22:21:41Z&st=2022-10-24T14:21:41Z&spr=https&sig=h6ukZIJe%2Fgtjq1oFElYs2Ym4HXTlQcbXHhSvgECKZQI%3D' --recursive
