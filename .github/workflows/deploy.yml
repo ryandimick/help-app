@@ -16,6 +16,7 @@ jobs:
         with:
           version: 'v10'          
       - run: azcopy_v10 copy 'https://smahelpcontent.file.core.windows.net/content?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-10-28T22:21:41Z&st=2022-10-24T14:21:41Z&spr=https&sig=GMBG2LR4V5%2FjBP%2Fs%2Fq7omYY6jLz06nXQv1gMNSBCBuc%3D' 'content/' --recursive
+      - run: tree
       - run: yarn install
       - run: yarn build
       - run: azcopy_v10 copy 'build/*' 'https://smahelpcontent.file.core.windows.net/app?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-10-28T22:21:41Z&st=2022-10-24T14:21:41Z&spr=https&sig=GMBG2LR4V5%2FjBP%2Fs%2Fq7omYY6jLz06nXQv1gMNSBCBuc%3D' --recursive
